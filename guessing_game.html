@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+
+<script>
+
+
+function pulaLinha(){
+	document.write("<br>");
+}
+
+function mostra(mensagem){
+	document.write(mensagem);
+	pulaLinha();
+}
+
+// Para o jogo não ficar repetitivo, o número pensado está sendo sorteado a cada rodada.
+
+var numeroPensado = Math.round(Math.random() * 10);
+// console.log(numeroPensado);
+
+var tentativa = parseInt(prompt("Tente adivinhar o número de 0 a 10!"));
+if(tentativa == numeroPensado){
+	mostra("Acertou!");
+} else{
+	mostra("Errou! Era o " + numeroPensado);
+}
+
+
+</script>
