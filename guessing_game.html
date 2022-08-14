@@ -15,15 +15,22 @@ function mostra(mensagem){
 
 // Para o jogo não ficar repetitivo, o número pensado está sendo sorteado a cada rodada.
 
+
 var numeroPensado = Math.round(Math.random() * 10);
 // console.log(numeroPensado);
 
-var tentativa = parseInt(prompt("Tente adivinhar o número de 0 a 10!"));
-if(tentativa == numeroPensado){
-	mostra("Acertou!");
-} else{
-	mostra("Errou! Era o " + numeroPensado);
+var numTentativas = parseInt(prompt("Quantas chances você quer para acertar o número?"));
+var contador = 0;
+	
+while(contador < numTentativas){
+	var tentativa = parseInt(prompt("Tente adivinhar o número de 0 a 10!"));
+	if(tentativa == numeroPensado){
+		mostra("Acertou! O número pensado era o " + numeroPensado);
+		break; // quebra do loop
+	} else{
+		mostra("Errou!");
+	}
+	contador++;
 }
-
-
+	
 </script>
